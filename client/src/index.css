@@ -363,3 +363,46 @@ img { max-width: 100%; display: block; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
   .reveal, .device.reveal, .cover-float.reveal { opacity: 1; transform: none !important; }
 }
+
+
+/* Stripe payment result states */
+.payment-result-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+  color: var(--cream);
+  background: radial-gradient(circle at 50% 25%, rgba(199, 159, 65, 0.16), transparent 30%), var(--ink);
+}
+.payment-result-card {
+  width: min(520px, 100%);
+  padding: 58px 42px;
+  text-align: center;
+  border: 1px solid var(--line-dark);
+  background: rgba(33, 27, 21, 0.82);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
+}
+.payment-result-icon {
+  display: grid;
+  place-items: center;
+  width: 66px;
+  height: 66px;
+  margin: 0 auto 24px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+}
+.payment-result-icon.is-paid { color: var(--ink); background: var(--gold); }
+.payment-result-icon.is-cancelled { color: var(--gold-light); border-color: rgba(200, 164, 93, 0.6); }
+.payment-result-icon.is-pending { color: var(--gold-light); }
+.payment-result-kicker { display: inline-flex; align-items: center; gap: 7px; color: var(--gold-light); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; }
+.payment-result-card h1 { margin: 18px 0 14px; color: var(--cream); font-family: var(--serif); font-size: 54px; font-weight: 500; letter-spacing: -0.04em; line-height: 0.98; }
+.payment-result-card p { color: var(--muted-light); font-size: 14px; line-height: 1.75; }
+.payment-result-card small { display: block; margin-top: 15px; color: var(--muted); font-size: 11px; }
+.payment-result-link { display: inline-flex; justify-content: center; align-items: center; min-height: 48px; margin-top: 28px; padding: 0 20px; color: var(--ink); background: linear-gradient(135deg, #e3c379, #b88d42); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; transition: transform 180ms var(--ease-out), box-shadow 180ms var(--ease-out); }
+.payment-result-link:hover { box-shadow: 0 12px 28px rgba(198, 151, 64, 0.3); transform: translateY(-2px); }
+.gold-cta:disabled { cursor: wait; opacity: 0.72; }
+@media (max-width: 560px) {
+  .payment-result-page { padding: 20px; }
+  .payment-result-card { padding: 44px 24px; }
+  .payment-result-card h1 { font-size: 46px; }
+}

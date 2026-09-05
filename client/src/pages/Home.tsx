@@ -12,13 +12,12 @@ import {
   ChevronDown,
   Clock3,
   LockKeyhole,
-  Play,
   ShieldCheck,
   Sparkles,
   Star,
 } from "lucide-react";
+import { StripeCheckoutButton } from "@/components/StripeCheckoutButton";
 
-const hotmartUrl = "https://go.hotmart.com/R106774018S?dp=1";
 const heroImage = "/manus-storage/hero-bg_27ef829e.png";
 const authorImage = "/manus-storage/author-spurgeon_107ca148.webp";
 const coverImage = "/manus-storage/a-paz-do-diabo-cover_4f3abc7b.png";
@@ -118,10 +117,9 @@ function SectionMarker({ children }: { children: React.ReactNode }) {
 
 function CTA({ compact = false }: { compact?: boolean }) {
   return (
-    <a className={`gold-cta ${compact ? "gold-cta-compact" : ""}`} href={hotmartUrl} target="_blank" rel="noreferrer">
+    <StripeCheckoutButton className={`gold-cta ${compact ? "gold-cta-compact" : ""}`}>
       <span>{compact ? "QUERO MINHA PAZ AGORA" : "QUERO MINHA PAZ AGORA — R$ 27,90"}</span>
-      <ArrowRight size={16} strokeWidth={1.8} />
-    </a>
+    </StripeCheckoutButton>
   );
 }
 
