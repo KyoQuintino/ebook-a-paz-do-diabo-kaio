@@ -1,11 +1,11 @@
 # E-book-a-paz-do-Diabo-kaio
 
-Site de apresentação e vendas do e-book *Limite Zero*, em português brasileiro. O repositório privado contém o projeto estático completo, os textos de cadastro e as artes promocionais locais.
+Site de apresentação e vendas do e-book *A Paz do Diabo*, em português brasileiro. O repositório privado contém o projeto estático completo, os textos de cadastro e as artes promocionais locais.
 
 ## Conteúdo
 
 - `index.html`, `styles.css` e `app.js`: página de vendas, menu mobile e CTAs.
-- `assets/limite-zero-cover.png`: arte original em alta resolução para divulgação.
+- `assets/a-paz-do-diabo-cover.png`: arte original em alta resolução para divulgação.
 - `assets/limite-zero-cover.webp`: versão otimizada usada na página.
 - `HOTMART-COPY.md`: título e descrição para cadastro do produto.
 - `manus-routes.json` e `app.config.ts`: metadados do projeto Manus.
