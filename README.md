@@ -1,4 +1,4 @@
-# Limite Zero — quintinoferreirakyo
+# E-book-a-paz-do-Diabo-kaio
 
 Site de apresentação e vendas do e-book *Limite Zero*, em português brasileiro. O repositório privado contém o projeto estático completo, os textos de cadastro e as artes promocionais locais.
 
