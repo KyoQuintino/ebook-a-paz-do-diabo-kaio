@@ -1,6 +1,6 @@
-import { Loader2, ArrowRight } from "lucide-react";
-import { toast } from "sonner";
-import { trpc } from "@/lib/trpc";
+import { ArrowRight } from "lucide-react";
+
+const KIWIFY_CHECKOUT_URL = "https://pay.kiwify.com.br/oIqQUxE";
 
 export function StripeCheckoutButton({
   children,
@@ -9,24 +9,16 @@ export function StripeCheckoutButton({
   children: React.ReactNode;
   className?: string;
 }) {
-  const checkout = trpc.checkout.createEbookSession.useMutation();
-
-  async function handleCheckout() {
-    try {
-      toast.loading("Preparando seu checkout seguro...", { id: "stripe-checkout" });
-      const { url } = await checkout.mutateAsync();
-      toast.success("Abrindo o checkout seguro.", { id: "stripe-checkout" });
-      window.open(url, "_blank", "noopener,noreferrer");
-    } catch (error) {
-      console.error("[Checkout] Could not create Stripe session", error);
-      toast.error("Não foi possível iniciar o pagamento. Tente novamente.", { id: "stripe-checkout" });
-    }
-  }
-
   return (
-    <button type="button" className={className} onClick={handleCheckout} disabled={checkout.isPending} aria-busy={checkout.isPending}>
-      {checkout.isPending ? <Loader2 size={16} className="animate-spin" /> : children}
-      {!checkout.isPending && <ArrowRight size={16} strokeWidth={1.8} />}
-    </button>
+    <a
+      href={KIWIFY_CHECKOUT_URL}
+      className={className}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Comprar o e-book pelo checkout seguro da Kiwify"
+    >
+      {children}
+      <ArrowRight size={16} strokeWidth={1.8} />
+    </a>
   );
 }
